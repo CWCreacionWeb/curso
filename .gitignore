@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !laboratorios/
 !laboratorios/**/*.ipynb
 
@@ -5,3 +6,11 @@
 **/.ipynb_checkpoints/
 **/__pycache__/
 **/*.ipynb
+=======
+**/.ipynb_checkpoints/
+
+**/__pycache__/
+
+sesiones/**/*.ipynb
+
+>>>>>>> upstream/main
