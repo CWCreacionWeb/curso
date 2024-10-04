@@ -90,6 +90,12 @@ def test_operations(fn):
         def runTest(self):
             self.assertEqual(fn(*self.input), self.output, f"Should be {self.output}")
 
+    def ans(arr, op):
+        if op == "+":
+            return sum(arr)
+        else:
+            return reduce(lambda a, b: a * b, arr, 1)
+
     suite = unittest.TestSuite()
     for _ in range(100):
         arr = []
@@ -97,12 +103,6 @@ def test_operations(fn):
             arr.append(random.randint(-10, 10))
         op = random.choice(["+", "*"])
         suite.addTest(TestKnown((arr, op), ans(arr, op)))
-
-    def ans(arr, op):
-        if op == "+":
-            return sum(arr)
-        else:
-            return reduce(lambda a, b: a * b, arr, 1)
 
     unittest.TextTestRunner().run(suite)
 
